@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("img/lanchonete.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  color: #F2F2F2;
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, .price {
+  font-family: 'Roboto Serif', serif;
+  text-transform: uppercase;
+  color: #FFA8A7;
+}
+
+.container {
+  background-color: rgba(30, 30, 30, 0.9);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px 5%;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 32px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 4px;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+header p {
+  font-size: 16px;
+  line-height: 20px;
+  color: #CCCCCC;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+section h2 {
+  background-color: #FFE0D1;
+  padding: 10px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 22px;
+  color: #2D2C2A;
+  border-radius: 15px;
+}
+
+ul li {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+ul li:hover {   
+  transform: scale(1.02);
+}
+
+li .details {
+  max-width: 80%;
+}
+
+.details h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 22px;
+  color: #FFA87A;
+}
+
+.details p {
+  color: #EAEAEA;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #FFA87A;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px;
+  color: #B0B0B0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price {
+    margin-top: 20px;
+  }
+}
