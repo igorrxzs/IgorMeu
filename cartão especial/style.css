@@ -1,0 +1,21 @@
+body {
+    background-color: lightcoral;
+}
+h1 {
+    font-family: Arial;
+}
+
+h2 {
+    font-family: Arial;
+    font-size: 27px;
+}
+
+a {
+    font-family: Arial;
+    font-size: 25px;  
+}
+
+p {
+    font-family: Arial;
+    font-size: 23px;
+}
