@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Demo</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .demo-container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            color: #6366f1;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #64748b;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .features {
+            text-align: left;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+        
+        .feature i {
+            color: #6366f1;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+        
+        .btn-secondary:hover {
+            background: #cbd5e1;
+        }
+        
+        .status {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="demo-container">
+        <div class="logo">
+            <i class="fas fa-tasks"></i>
+        </div>
+        <h1>TaskFlow</h1>
+        <p class="subtitle">Sistema de Gerenciamento de Produtos Desenvolvido com IA</p>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-plus-circle"></i>
+                <div>
+                    <strong>CRUD Completo</strong><br>
+                    Criar, visualizar, editar e excluir produtos
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-search"></i>
+                <div>
+                    <strong>Busca Inteligente</strong><br>
+                    Sistema de busca em tempo real
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                    <strong>Analytics</strong><br>
+                    Dashboard com estatísticas dos produtos
+                </div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <div>
+                    <strong>Responsivo</strong><br>
+                    Funciona perfeitamente em qualquer dispositivo
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-rocket"></i>
+                Acessar Sistema
+            </a>
+            <a href="Cardapio/mydick.html" class="btn btn-secondary">
+                <i class="fas fa-utensils"></i>
+                Ver Cardápio
+            </a>
+        </div>
+        
+        <div id="status" class="status" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Verificar se o servidor está rodando
+        async function checkServerStatus() {
+            try {
+                const response = await fetch('http://localhost:3000/api/produtos');
+                if (response.ok) {
+                    showStatus('Servidor está rodando! ✅', 'success');
+                } else {
+                    showStatus('Servidor respondeu com erro ⚠️', 'error');
+                }
+            } catch (error) {
+                showStatus('Servidor não está rodando. Execute: npm start', 'error');
+            }
+        }
+        
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+        }
+        
+        // Verificar status do servidor ao carregar a página
+        checkServerStatus();
+    </script>
+</body>
+</html>
