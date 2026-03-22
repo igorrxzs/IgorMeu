@@ -1,0 +1,56 @@
+/* Estilos principais da aplicação */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  transition: background-color 0.3s ease;
+}
+
+.app.dark-mode {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+/* Tema escuro */
+body.dark-mode {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+body.dark-mode .header {
+  background-color: #2d3748;
+  border-bottom-color: #4a5568;
+}
+
+body.dark-mode .card {
+  background-color: #2d3748;
+  border-color: #4a5568;
+}
+
+body.dark-mode .stats-card {
+  background-color: #2d3748;
+  border-color: #4a5568;
+}
+
+body.dark-mode .footer {
+  background-color: #2d3748;
+  border-top-color: #4a5568;
+}
+
+/* Layout principal */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
