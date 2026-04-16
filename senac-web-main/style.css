@@ -1,0 +1,24 @@
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #afaff7, #000000);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0,05);
+    border-radius: 12px;
+}
+
+table {
+    width: 75%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.04);
+}

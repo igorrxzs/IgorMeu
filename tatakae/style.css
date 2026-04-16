@@ -1,0 +1,22 @@
+body {
+    background-color: navajowhite;
+}
+
+.container {
+    text-align: center\;
+}
+
+.box {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(128, 17, 255);
+}
+
+.one {
+    background-color: aqua;
+}
+
+.two {
+    background-color: chocolate;
+}
